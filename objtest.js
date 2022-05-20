@@ -23,16 +23,16 @@ empList.sort(function (a, b) {
 console.log(empList);
 
 // 2nd method
+//
+var temp = [];
 
-// var temp = [];
-
-// for (var i = 0; i < empList.length; i++) {
-//   for (var j = 0; j < i; j++)
-//     if (empList[i].empid < empList[j].empid) {
-//       temp[i] = empList[i];
-//       empList[i] = empList[j];
-//       empList[j] = temp[i];
-//     }
-// }
+for (var i = 0; i < empList.length; i++) {
+  for (var j = 0; j < i; j++)
+    if (empList[i].empid < empList[j].empid) {
+      temp[i] = empList[i];
+      empList[i] = empList[j];
+      empList[j] = temp[i];
+    }
+}
 
 console.log(empList);
