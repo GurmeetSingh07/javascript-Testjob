@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <script>
+      function ageCalculator() {
+        var Date1 = document.getElementById("Date1").value;
+        var Date2 = document.getElementById("Date2").value;
+
+        Date1 = Date1.split("-");
+        Date2 = Date2.split("-");
+        var [year1, month1, day1] = Date1;
+        var [year2, month2, day2] = Date2;
+
+        if ((Date1 = null || Date1 == "") || (Date2 = null || Date2 == "")) {
+          document.getElementById("message").innerHTML =
+            "**Choose a date please!";
+          return false;
+        } else if (year1 > year2 && month1 > month2 && day1 > day2) {
+          const year_age = year1 - year2;
+          const month_age = month1 - month2;
+          const day = day1 - day2;
+
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 > year2 && month1 < month2 && day1 < day2) {
+          year1 = year1 - 1;
+
+          month1 = parseInt(month1) + 12 - 1;
+          day1 = parseInt(day1) + 30;
+
+          const year_age = year1 - year2;
+          const month_age = month1 - month2;
+          const day = day1 - day2;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year2 > year1 && month2 < month1 && day2 < day1) {
+          year2 = year2 - 1;
+
+          month2 = parseInt(month2) + 12 - 1;
+          day2 = parseInt(day2) + 30;
+
+          const year_age = year2 - year1;
+          const month_age = month2 - month1;
+          const day = day2 - day1;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 > year2 && month1 < month2 && day1 > day2) {
+          year1 = year1 - 1;
+
+          month1 = parseInt(month1) + 12;
+
+          const year_age = year1 - year2;
+          const month_age = month1 - month2;
+          const day = day1 - day2;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year2 > year1 && month2 > month1 && day2 > day1) {
+          const year_age = year2 - year1;
+          const month_age = month2 - month1;
+          const day = day2 - day1;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 > year2 && month1 > month2 && day1 < day2) {
+          month1 = parseInt(month1) - 1;
+          day1 = parseInt(day1) + 30;
+
+          const year_age = year1 - year2;
+          const month_age = month1 - month2;
+          const day = day1 - day2;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year2 > year1 && month2 < month1 && day2 > day1) {
+          year2 = year2 - 1;
+
+          month2 = parseInt(month2) + 12;
+
+          const year_age = year2 - year1;
+          const month_age = month2 - month1;
+          const day = day2 - day1;
+          console.log("testing");
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year2 > year1 && month2 > month1 && day2 < day1) {
+          month2 = parseInt(month2) - 1;
+          day2 = parseInt(day2) + 30;
+
+          const year_age = year2 - year1;
+          const month_age = month2 - month1;
+          const day = day2 - day1;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 < year2 && month1 < month2 && day1 == day2) {
+          const year_age = year2 - year1;
+          const month_age = month2 - month1;
+          const day = day2 - day1;
+          console.log("here");
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 < year2 && month1 > month2 && day1 == day2) {
+          const year_age = year2 - year1;
+          const month_age = month2 - month1;
+          const day = day2 - day1;
+          console.log("here");
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 == year2 && month1 == month2 && day1 < day2) {
+          const year_age = year2 - year1;
+          const month_age = month2 - month1;
+          const day = day2 - day1;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 == year2 && month1 > month2 && day1 > day2) {
+          const year_age = year1 - year2;
+          const month_age = month1 - month2;
+          const day = day1 - day2;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 == year2 && month1 < month2 && day1 < day2) {
+          const year_age = year2 - year1;
+          const month_age = month2 - month1;
+          const day = day2 - day1;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 < year2 && month1 == month2 && day1 < day2) {
+          const year_age = year2 - year1;
+          const month_age = month2 - month1;
+          const day = day2 - day1;
+          console.log("hello");
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 == year2 && month1 == month2 && day1 > day2) {
+          const year_age = year2 - year1;
+          const month_age = month2 - month1;
+          const day = day1 - day2;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 == year2 && month1 < month2 && day1 > day2) {
+          day2 = parseInt(day2) + 30;
+          month2 = parseInt(month2) - 1;
+          const year_age = year1 - year2;
+          const month_age = month2 - month1;
+          const day = day2 - day1;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        } else if (year1 == year2 && month1 == month2 && day1 == day2) {
+          const year_age = year1 - year2;
+          const month_age = month2 - month1;
+          const day = day2 - day1;
+          document.getElementById("result").innerHTML =
+            year_age + " years " + month_age + " month " + day + " days";
+        }
+      }
+    </script>
+    Date1:<input type="date" id="Date1" /><br />
+
+    Date2:<input type="date" id="Date2" /><br />
+    <input type="button" value="submit" onclick="ageCalculator()" />
+
+    <h3 style="color: #008cba" id="result" align="center"></h3>
+  </body>
+</html>
